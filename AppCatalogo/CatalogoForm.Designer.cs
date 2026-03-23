@@ -140,6 +140,7 @@
             this.FiltroTextBox.Name = "FiltroTextBox";
             this.FiltroTextBox.Size = new System.Drawing.Size(147, 20);
             this.FiltroTextBox.TabIndex = 0;
+            this.FiltroTextBox.TextChanged += new System.EventHandler(this.FiltroTextBox_TextChanged);
             // 
             // CatalogoPictureBox
             // 

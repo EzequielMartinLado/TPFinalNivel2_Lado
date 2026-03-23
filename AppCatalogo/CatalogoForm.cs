@@ -98,7 +98,7 @@ namespace AppCatalogo
             }
         }
 
-       
+
         private void FiltrarButton_Click(object sender, EventArgs e)
         {
             if (!FiltroValido())
@@ -139,6 +139,20 @@ namespace AppCatalogo
 
         }
 
-        
+        private void FiltroTextBox_TextChanged(object sender, EventArgs e)
+        {
+            List<Producto> listaFiltrada;
+            string filtro = FiltroTextBox.Text;
+            if (string.IsNullOrEmpty(filtro))
+            {
+                CatalogoDataGridView.DataSource = listaProductos;
+            }
+            else
+            {
+                listaFiltrada = listaProductos.FindAll(p=>p.Nombre.ToLower().Contains(filtro.ToLower()) || p.Marca.ToString().ToLower().Contains(filtro.ToLower()) || p.Categoria.ToString().ToLower().Contains(filtro.ToLower()));
+                CatalogoDataGridView.DataSource = listaFiltrada;
+                OcultarColumnas();
+            }
+        }
     }
 }
