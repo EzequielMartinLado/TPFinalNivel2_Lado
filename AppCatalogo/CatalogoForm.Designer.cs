@@ -41,6 +41,7 @@
             this.FiltroTextBox = new System.Windows.Forms.TextBox();
             this.CatalogoPictureBox = new System.Windows.Forms.PictureBox();
             this.AdvertenciaLabel = new System.Windows.Forms.Label();
+            this.LimpiarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CatalogoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CatalogoPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +73,7 @@
             this.FiltrarButton.Location = new System.Drawing.Point(386, 104);
             this.FiltrarButton.Name = "FiltrarButton";
             this.FiltrarButton.Size = new System.Drawing.Size(75, 23);
-            this.FiltrarButton.TabIndex = 2;
+            this.FiltrarButton.TabIndex = 3;
             this.FiltrarButton.Text = "Filtrar";
             this.FiltrarButton.UseVisualStyleBackColor = true;
             this.FiltrarButton.Click += new System.EventHandler(this.FiltrarButton_Click);
@@ -84,7 +85,7 @@
             this.CategoriaFiltroComboBox.Location = new System.Drawing.Point(85, 104);
             this.CategoriaFiltroComboBox.Name = "CategoriaFiltroComboBox";
             this.CategoriaFiltroComboBox.Size = new System.Drawing.Size(121, 21);
-            this.CategoriaFiltroComboBox.TabIndex = 3;
+            this.CategoriaFiltroComboBox.TabIndex = 1;
             // 
             // MarcaFiltroComboBox
             // 
@@ -93,7 +94,7 @@
             this.MarcaFiltroComboBox.Location = new System.Drawing.Point(255, 104);
             this.MarcaFiltroComboBox.Name = "MarcaFiltroComboBox";
             this.MarcaFiltroComboBox.Size = new System.Drawing.Size(121, 21);
-            this.MarcaFiltroComboBox.TabIndex = 4;
+            this.MarcaFiltroComboBox.TabIndex = 2;
             // 
             // CategoriaFiltroLabel
             // 
@@ -138,7 +139,7 @@
             this.FiltroTextBox.Location = new System.Drawing.Point(30, 42);
             this.FiltroTextBox.Name = "FiltroTextBox";
             this.FiltroTextBox.Size = new System.Drawing.Size(147, 20);
-            this.FiltroTextBox.TabIndex = 9;
+            this.FiltroTextBox.TabIndex = 0;
             // 
             // CatalogoPictureBox
             // 
@@ -160,12 +161,23 @@
             this.AdvertenciaLabel.Size = new System.Drawing.Size(0, 17);
             this.AdvertenciaLabel.TabIndex = 11;
             // 
+            // LimpiarButton
+            // 
+            this.LimpiarButton.Location = new System.Drawing.Point(386, 132);
+            this.LimpiarButton.Name = "LimpiarButton";
+            this.LimpiarButton.Size = new System.Drawing.Size(75, 23);
+            this.LimpiarButton.TabIndex = 4;
+            this.LimpiarButton.Text = "Limpiar";
+            this.LimpiarButton.UseVisualStyleBackColor = true;
+            this.LimpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click);
+            // 
             // CatalogoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.VolverAMenuButton;
             this.ClientSize = new System.Drawing.Size(1084, 653);
+            this.Controls.Add(this.LimpiarButton);
             this.Controls.Add(this.AdvertenciaLabel);
             this.Controls.Add(this.CatalogoPictureBox);
             this.Controls.Add(this.FiltroTextBox);
@@ -209,5 +221,6 @@
         private System.Windows.Forms.TextBox FiltroTextBox;
         private System.Windows.Forms.PictureBox CatalogoPictureBox;
         private System.Windows.Forms.Label AdvertenciaLabel;
+        private System.Windows.Forms.Button LimpiarButton;
     }
 }

@@ -130,7 +130,7 @@
             this.MarcaComboBox.Location = new System.Drawing.Point(161, 162);
             this.MarcaComboBox.Name = "MarcaComboBox";
             this.MarcaComboBox.Size = new System.Drawing.Size(134, 21);
-            this.MarcaComboBox.TabIndex = 9;
+            this.MarcaComboBox.TabIndex = 3;
             // 
             // CategoriaComboBox
             // 
@@ -139,42 +139,42 @@
             this.CategoriaComboBox.Location = new System.Drawing.Point(161, 194);
             this.CategoriaComboBox.Name = "CategoriaComboBox";
             this.CategoriaComboBox.Size = new System.Drawing.Size(134, 21);
-            this.CategoriaComboBox.TabIndex = 10;
+            this.CategoriaComboBox.TabIndex = 4;
             // 
             // CodigoTextBox
             // 
             this.CodigoTextBox.Location = new System.Drawing.Point(161, 69);
             this.CodigoTextBox.Name = "CodigoTextBox";
             this.CodigoTextBox.Size = new System.Drawing.Size(134, 20);
-            this.CodigoTextBox.TabIndex = 11;
+            this.CodigoTextBox.TabIndex = 0;
             // 
             // NombreTextBox
             // 
             this.NombreTextBox.Location = new System.Drawing.Point(161, 100);
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(134, 20);
-            this.NombreTextBox.TabIndex = 12;
+            this.NombreTextBox.TabIndex = 1;
             // 
             // DescripcionTextBox
             // 
             this.DescripcionTextBox.Location = new System.Drawing.Point(161, 131);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(134, 20);
-            this.DescripcionTextBox.TabIndex = 13;
+            this.DescripcionTextBox.TabIndex = 2;
             // 
             // ImagenTextBox
             // 
             this.ImagenTextBox.Location = new System.Drawing.Point(161, 226);
             this.ImagenTextBox.Name = "ImagenTextBox";
             this.ImagenTextBox.Size = new System.Drawing.Size(134, 20);
-            this.ImagenTextBox.TabIndex = 14;
+            this.ImagenTextBox.TabIndex = 5;
             // 
             // PrecioTextBox
             // 
             this.PrecioTextBox.Location = new System.Drawing.Point(161, 257);
             this.PrecioTextBox.Name = "PrecioTextBox";
             this.PrecioTextBox.Size = new System.Drawing.Size(134, 20);
-            this.PrecioTextBox.TabIndex = 15;
+            this.PrecioTextBox.TabIndex = 6;
             // 
             // ImagenPictureBox
             // 

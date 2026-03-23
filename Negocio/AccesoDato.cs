@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Configuration;
 
 namespace Negocio
 {
@@ -21,7 +22,8 @@ namespace Negocio
 
         public AccesoDato()
         {
-            conexion = new SqlConnection("server=LADO-EZEQUIEL\\SQLEXPRESS01; database=CATALOGO_DB; integrated security=true");
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["CATALOGO_DB"].ConnectionString;
+            conexion = new SqlConnection(cadenaConexion);
             comando = new SqlCommand();
         }
 

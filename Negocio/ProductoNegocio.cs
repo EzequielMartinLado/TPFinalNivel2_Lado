@@ -119,19 +119,81 @@ namespace Negocio
             finally { dato.CerrarConexion(); }
         }
 
-        public List<Producto> Filtrar(string categoria, string marca)
+        /* public List<Producto> Filtrar(string categoria, string marca)
+         {
+             List<Producto> listaProductos = new List<Producto>();
+             AccesoDato dato = new AccesoDato();
+             try
+             {
+                 string consulta = "select A.Id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion Marca, A.IdMarca, C.Descripcion Categoria, A.IdCategoria, A.ImagenUrl, A.Precio from dbo.ARTICULOS A, dbo.CATEGORIAS C, dbo.MARCAS M where A.IdCategoria = C.Id and A.IdMarca = M.Id and ";
+                 consulta += "C.Descripcion = '" + categoria.ToString() + "' and M.Descripcion = '" + marca.ToString() + "'";
+
+
+
+                 dato.SetearConsulta(consulta);
+                 dato.EjecutarLectura();
+                 while (dato.Lector.Read())
+                 {
+                     Producto producto = new Producto();
+                     producto.Id = (int)dato.Lector["Id"];
+                     producto.Codigo = (string)dato.Lector["Codigo"];
+                     producto.Nombre = (string)dato.Lector["Nombre"];
+                     producto.Descripcion = (string)dato.Lector["Descripcion"];
+                     if (!(dato.Lector["ImagenUrl"] is DBNull))
+                         producto.ImagenUrl = (string)dato.Lector["ImagenUrl"];
+                     // Opción A: convertir desde decimal a double
+                     producto.Precio = Convert.ToDouble((decimal)dato.Lector["Precio"]);
+                     // Opción B: usar Convert.ToDouble directamente (maneja varios tipos)
+                     // producto.Precio = Convert.ToDouble(dato.Lector["Precio"]);
+                     producto.Marca = new Marca();
+                     producto.Marca.Id = (int)dato.Lector["IdMarca"];
+                     producto.Marca.Descripcion = (string)dato.Lector["Marca"];
+                     producto.Categoria = new Categoria();
+                     producto.Categoria.Id = (int)dato.Lector["IdCategoria"];
+                     producto.Categoria.Descripcion = (string)dato.Lector["Categoria"];
+                     listaProductos.Add(producto);
+                 }
+                 return listaProductos;
+
+
+
+             }
+             catch (Exception)
+             {
+
+                 throw;
+             }
+
+         }*/
+        public List<Producto> Filtrar(int? idCategoria, int? idMarca)
         {
             List<Producto> listaProductos = new List<Producto>();
             AccesoDato dato = new AccesoDato();
             try
             {
-                string consulta = "select A.Id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion Marca, A.IdMarca, C.Descripcion Categoria, A.IdCategoria, A.ImagenUrl, A.Precio from dbo.ARTICULOS A, dbo.CATEGORIAS C, dbo.MARCAS M where A.IdCategoria = C.Id and A.IdMarca = M.Id and ";
-                consulta += "C.Descripcion = '" + categoria.ToString() + "' and M.Descripcion = '" + marca.ToString() + "'";
+                string consulta = @"SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, 
+                                   M.Descripcion Marca, A.IdMarca, 
+                                   C.Descripcion Categoria, A.IdCategoria, 
+                                   A.ImagenUrl, A.Precio 
+                            FROM dbo.ARTICULOS A, dbo.CATEGORIAS C, dbo.MARCAS M 
+                            WHERE A.IdCategoria = C.Id AND A.IdMarca = M.Id";
 
+                if (idCategoria.HasValue)
+                    consulta += " AND A.IdCategoria = @IdCategoria";
 
+                if (idMarca.HasValue)
+                    consulta += " AND A.IdMarca = @IdMarca";
 
                 dato.SetearConsulta(consulta);
+
+                if (idCategoria.HasValue)
+                    dato.AgregarParametro("@IdCategoria", idCategoria.Value);
+
+                if (idMarca.HasValue)
+                    dato.AgregarParametro("@IdMarca", idMarca.Value);
+
                 dato.EjecutarLectura();
+
                 while (dato.Lector.Read())
                 {
                     Producto producto = new Producto();
@@ -141,10 +203,7 @@ namespace Negocio
                     producto.Descripcion = (string)dato.Lector["Descripcion"];
                     if (!(dato.Lector["ImagenUrl"] is DBNull))
                         producto.ImagenUrl = (string)dato.Lector["ImagenUrl"];
-                    // Opción A: convertir desde decimal a double
                     producto.Precio = Convert.ToDouble((decimal)dato.Lector["Precio"]);
-                    // Opción B: usar Convert.ToDouble directamente (maneja varios tipos)
-                    // producto.Precio = Convert.ToDouble(dato.Lector["Precio"]);
                     producto.Marca = new Marca();
                     producto.Marca.Id = (int)dato.Lector["IdMarca"];
                     producto.Marca.Descripcion = (string)dato.Lector["Marca"];
@@ -154,18 +213,13 @@ namespace Negocio
                     listaProductos.Add(producto);
                 }
                 return listaProductos;
-
-
-
             }
             catch (Exception)
             {
-
                 throw;
             }
-
+            finally { dato.CerrarConexion(); }
         }
-
 
 
     }

@@ -40,7 +40,7 @@
             this.CatalogoButton.Location = new System.Drawing.Point(306, 93);
             this.CatalogoButton.Name = "CatalogoButton";
             this.CatalogoButton.Size = new System.Drawing.Size(188, 66);
-            this.CatalogoButton.TabIndex = 1;
+            this.CatalogoButton.TabIndex = 0;
             this.CatalogoButton.Text = "Catálogo";
             this.CatalogoButton.UseVisualStyleBackColor = true;
             this.CatalogoButton.Click += new System.EventHandler(this.CatalogoButton_Click);
@@ -52,7 +52,7 @@
             this.AgregarButton.Location = new System.Drawing.Point(306, 192);
             this.AgregarButton.Name = "AgregarButton";
             this.AgregarButton.Size = new System.Drawing.Size(188, 66);
-            this.AgregarButton.TabIndex = 3;
+            this.AgregarButton.TabIndex = 1;
             this.AgregarButton.Text = "Agregar";
             this.AgregarButton.UseVisualStyleBackColor = true;
             this.AgregarButton.Click += new System.EventHandler(this.AgregarButton_Click);
@@ -64,7 +64,7 @@
             this.ModificarButton.Location = new System.Drawing.Point(306, 291);
             this.ModificarButton.Name = "ModificarButton";
             this.ModificarButton.Size = new System.Drawing.Size(188, 66);
-            this.ModificarButton.TabIndex = 5;
+            this.ModificarButton.TabIndex = 2;
             this.ModificarButton.Text = "Modificar";
             this.ModificarButton.UseVisualStyleBackColor = true;
             this.ModificarButton.Click += new System.EventHandler(this.ModificarButton_Click);

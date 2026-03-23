@@ -98,29 +98,47 @@ namespace AppCatalogo
             }
         }
 
+       
         private void FiltrarButton_Click(object sender, EventArgs e)
         {
+            if (!FiltroValido())
+                return;
+
             ProductoNegocio productoNegocio = new ProductoNegocio();
-            while (!(FiltroValido()))
-            {
-                string categoria = CategoriaFiltroComboBox.SelectedItem.ToString();
-                string marca = MarcaFiltroComboBox.SelectedItem.ToString();
-                CatalogoDataGridView.DataSource = productoNegocio.Filtrar(categoria, marca);
-            }
+
+            int? idCategoria = CategoriaFiltroComboBox.SelectedIndex != -1
+                ? ((Categoria)CategoriaFiltroComboBox.SelectedItem).Id
+                : (int?)null;
+
+            int? idMarca = MarcaFiltroComboBox.SelectedIndex != -1
+                ? ((Marca)MarcaFiltroComboBox.SelectedItem).Id
+                : (int?)null;
+
+            CatalogoDataGridView.DataSource = productoNegocio.Filtrar(idCategoria, idMarca);
+            OcultarColumnas();
         }
 
         private bool FiltroValido()
         {
-            string validacion;
-            if (MarcaFiltroComboBox.SelectedIndex != -1 || CategoriaFiltroComboBox.SelectedIndex != -1)
+            if (CategoriaFiltroComboBox.SelectedIndex == -1 && MarcaFiltroComboBox.SelectedIndex == -1)
             {
-                validacion = "Seleccionar una opción";
-                AdvertenciaLabel.Text = validacion;
-                return true;
-
-            }
-            else
+                AdvertenciaLabel.Text = "Seleccioná al menos una opción";
                 return false;
+            }
+
+            AdvertenciaLabel.Text = "";
+            return true;
         }
+
+        private void LimpiarButton_Click(object sender, EventArgs e)
+        {
+            CategoriaFiltroComboBox.SelectedIndex = -1;
+            MarcaFiltroComboBox.SelectedIndex = -1;
+            AdvertenciaLabel.Text = "";
+            ActualizarDataGridView();
+
+        }
+
+        
     }
 }
