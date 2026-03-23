@@ -22,8 +22,7 @@ namespace Negocio
 
         public AccesoDato()
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["CATALOGO_DB"].ConnectionString;
-            conexion = new SqlConnection(cadenaConexion);
+            conexion = new SqlConnection("server=LADO-EZEQUIEL\\SQLEXPRESS01; database=CATALOGO_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
