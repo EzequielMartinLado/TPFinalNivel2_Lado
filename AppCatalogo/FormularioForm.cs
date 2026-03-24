@@ -60,6 +60,19 @@ namespace AppCatalogo
                 producto.Categoria = (Categoria)CategoriaComboBox.SelectedItem;
                 producto.ImagenUrl = ImagenTextBox.Text;
                 producto.Precio = double.Parse(PrecioTextBox.Text);
+
+                if (producto.Id != 0)
+                {
+                    productoNegocio.ModificarProducto(producto);
+                    MessageBox.Show("Producto modificado exitosamente");
+                }
+                else
+                {
+                    productoNegocio.agregarProducto(producto);
+                    MessageBox.Show("Producto agregado exitosamente");
+                }
+
+                Close();
             }
             catch (Exception)
             {
@@ -94,6 +107,7 @@ namespace AppCatalogo
                     CategoriaComboBox.SelectedValue = producto.Categoria.Id;
 
                 }
+
             }
             catch (Exception ex)
             {

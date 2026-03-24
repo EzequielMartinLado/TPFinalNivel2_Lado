@@ -85,7 +85,7 @@ namespace Negocio
             AccesoDato dato = new AccesoDato();
             try
             {
-                dato.SetearConsulta("update dob.ARTICULOS set Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, IdMarca = @IdMarca, IdCategoria = @IdCategoria, Precio = @Precio, ImagenUrl = @ImagenUrl where Id = @Id");
+                dato.SetearConsulta("update dbo.ARTICULOS set Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, IdMarca = @IdMarca, IdCategoria = @IdCategoria, Precio = @Precio, ImagenUrl = @ImagenUrl where Id = @Id");
                 dato.AgregarParametro("@Codigo", producto.Codigo);
                 dato.AgregarParametro("@Nombre", producto.Nombre);
                 dato.AgregarParametro("@Descripcion", producto.Descripcion);
@@ -221,6 +221,6 @@ namespace Negocio
             finally { dato.CerrarConexion(); }
         }
 
-
+        
     }
 }
