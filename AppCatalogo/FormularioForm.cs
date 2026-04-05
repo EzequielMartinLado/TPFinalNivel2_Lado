@@ -137,6 +137,7 @@ namespace AppCatalogo
             DescripcionTextBox.Text = productoSeleccionado.Descripcion ?? "";
             ImagenTextBox.Text = productoSeleccionado.ImagenUrl ?? "";
             CargarImagen(productoSeleccionado.ImagenUrl);
+            PrecioTextBox.Text = productoSeleccionado.Precio.ToString();
 
             if (productoSeleccionado.Marca != null)
                 MarcaComboBox.SelectedValue = productoSeleccionado.Marca.Id;
@@ -147,6 +148,24 @@ namespace AppCatalogo
                 CategoriaComboBox.SelectedValue = productoSeleccionado.Categoria.Id;
             else
                 CategoriaComboBox.SelectedIndex = -1;
+        }
+
+        private void ModificarButton_Click(object sender, EventArgs e)
+        {
+            ProductoNegocio productoNegocio = new ProductoNegocio();
+            try
+            {
+                if (producto.Id != 0)
+                {
+                    productoNegocio.ModificarProducto(producto);
+                    MessageBox.Show("Producto modificado exitosamente");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

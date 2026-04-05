@@ -42,6 +42,7 @@
             this.CatalogoPictureBox = new System.Windows.Forms.PictureBox();
             this.AdvertenciaLabel = new System.Windows.Forms.Label();
             this.LimpiarButton = new System.Windows.Forms.Button();
+            this.EliminarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CatalogoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CatalogoPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -172,12 +173,23 @@
             this.LimpiarButton.UseVisualStyleBackColor = true;
             this.LimpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click);
             // 
+            // EliminarButton
+            // 
+            this.EliminarButton.Location = new System.Drawing.Point(47, 488);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(75, 23);
+            this.EliminarButton.TabIndex = 12;
+            this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            // 
             // CatalogoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.VolverAMenuButton;
             this.ClientSize = new System.Drawing.Size(1084, 653);
+            this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.LimpiarButton);
             this.Controls.Add(this.AdvertenciaLabel);
             this.Controls.Add(this.CatalogoPictureBox);
@@ -223,5 +235,6 @@
         private System.Windows.Forms.PictureBox CatalogoPictureBox;
         private System.Windows.Forms.Label AdvertenciaLabel;
         private System.Windows.Forms.Button LimpiarButton;
+        private System.Windows.Forms.Button EliminarButton;
     }
 }

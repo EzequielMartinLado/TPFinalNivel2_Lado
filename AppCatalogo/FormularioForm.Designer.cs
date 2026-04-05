@@ -189,7 +189,7 @@
             this.ImagenPictureBox.Location = new System.Drawing.Point(553, 73);
             this.ImagenPictureBox.Name = "ImagenPictureBox";
             this.ImagenPictureBox.Size = new System.Drawing.Size(381, 381);
-            this.ImagenPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImagenPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ImagenPictureBox.TabIndex = 16;
             this.ImagenPictureBox.TabStop = false;
             // 
@@ -213,6 +213,7 @@
             this.ModificarButton.TabIndex = 18;
             this.ModificarButton.Text = "Modificar";
             this.ModificarButton.UseVisualStyleBackColor = true;
+            this.ModificarButton.Click += new System.EventHandler(this.ModificarButton_Click);
             // 
             // FormularioGroupBox
             // 

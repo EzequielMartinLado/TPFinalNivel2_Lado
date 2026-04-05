@@ -154,5 +154,29 @@ namespace AppCatalogo
                 OcultarColumnas();
             }
         }
+
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+            ProductoNegocio productoNegocio = new ProductoNegocio();
+            Producto productoSeleccionado;
+
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Está seguro de que quiere eliminar un registro?", "Eliminar producto", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    productoSeleccionado = (Producto)CatalogoDataGridView.CurrentRow.DataBoundItem;
+                    productoNegocio.eliminarProducto(productoSeleccionado.Id);
+                    MessageBox.Show("Producto eliminado exitosamente");
+                    ActualizarDataGridView();
+                }
+            } 
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
     }
 }
