@@ -48,6 +48,7 @@
             this.AgregarButton = new System.Windows.Forms.Button();
             this.ModificarButton = new System.Windows.Forms.Button();
             this.FormularioGroupBox = new System.Windows.Forms.GroupBox();
+            this.CodigoComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ImagenPictureBox)).BeginInit();
             this.FormularioGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -227,14 +228,24 @@
             this.FormularioGroupBox.Controls.Add(this.ImagenLabel);
             this.FormularioGroupBox.Controls.Add(this.NombreTextBox);
             this.FormularioGroupBox.Controls.Add(this.PrecioLabel);
-            this.FormularioGroupBox.Controls.Add(this.CodigoTextBox);
             this.FormularioGroupBox.Controls.Add(this.MarcaComboBox);
+            this.FormularioGroupBox.Controls.Add(this.CodigoComboBox);
+            this.FormularioGroupBox.Controls.Add(this.CodigoTextBox);
             this.FormularioGroupBox.Location = new System.Drawing.Point(51, 69);
             this.FormularioGroupBox.Name = "FormularioGroupBox";
             this.FormularioGroupBox.Size = new System.Drawing.Size(496, 385);
             this.FormularioGroupBox.TabIndex = 19;
             this.FormularioGroupBox.TabStop = false;
             this.FormularioGroupBox.Text = "Agregar";
+            // 
+            // CodigoComboBox
+            // 
+            this.CodigoComboBox.FormattingEnabled = true;
+            this.CodigoComboBox.Location = new System.Drawing.Point(161, 51);
+            this.CodigoComboBox.Name = "CodigoComboBox";
+            this.CodigoComboBox.Size = new System.Drawing.Size(185, 21);
+            this.CodigoComboBox.TabIndex = 9;
+            this.CodigoComboBox.SelectedIndexChanged += new System.EventHandler(this.CodigoComboBox_SelectedIndexChanged);
             // 
             // FormularioForm
             // 
@@ -285,5 +296,6 @@
         private System.Windows.Forms.Button AgregarButton;
         private System.Windows.Forms.Button ModificarButton;
         private System.Windows.Forms.GroupBox FormularioGroupBox;
+        private System.Windows.Forms.ComboBox CodigoComboBox;
     }
 }

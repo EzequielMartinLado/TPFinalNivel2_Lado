@@ -32,11 +32,9 @@ namespace Negocio
                     if (!(dato.Lector["ImagenUrl"] is DBNull))
                         producto.ImagenUrl= (string)dato.Lector["ImagenUrl"];
 
-                    // Opción A: convertir desde decimal a double
+                    
                     producto.Precio = Convert.ToDouble((decimal)dato.Lector["Precio"]);
 
-                    // Opción B: usar Convert.ToDouble directamente (maneja varios tipos)
-                    // producto.Precio = Convert.ToDouble(dato.Lector["Precio"]);
                     
 
                     producto.Marca = new Marca();

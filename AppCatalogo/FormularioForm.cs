@@ -84,6 +84,7 @@ namespace AppCatalogo
         private void FormularioForm_Load(object sender, EventArgs e)
         {
             MarcaNegocio marcaNegocio = new MarcaNegocio();
+            ProductoNegocio productoNegocio = new ProductoNegocio();
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
             try
             {
@@ -95,18 +96,10 @@ namespace AppCatalogo
                 CategoriaComboBox.ValueMember = "Id";
                 CategoriaComboBox.DisplayMember = "Descripcion";
                 CategoriaComboBox.SelectedIndex = -1;
-
-                if (producto != null)
-                {
-                    CodigoTextBox.Text = producto.Codigo;
-                    NombreTextBox.Text = producto.Nombre;
-                    DescripcionTextBox.Text = producto.Descripcion;
-                    ImagenTextBox.Text = producto.ImagenUrl;
-                    CargarImagen(producto.ImagenUrl);
-                    MarcaComboBox.SelectedValue = producto.Marca.Id;
-                    CategoriaComboBox.SelectedValue = producto.Categoria.Id;
-
-                }
+                CodigoComboBox.DataSource = productoNegocio.ListarProductos();
+                CodigoComboBox.ValueMember = "Id";
+                CodigoComboBox.DisplayMember = "Codigo";
+     
 
             }
             catch (Exception ex)
@@ -131,6 +124,29 @@ namespace AppCatalogo
         private void ImagenTextBox_Leave(object sender, EventArgs e)
         {
             CargarImagen(ImagenTextBox.Text);
+        }
+
+        private void CodigoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Obtener el producto seleccionado del ComboBox (DataSource fue asignado en Load)
+            var productoSeleccionado = CodigoComboBox.SelectedItem as Producto;
+            if (productoSeleccionado == null)
+                return; // nada seleccionado o evento disparado durante inicialización
+
+            NombreTextBox.Text = productoSeleccionado.Nombre ?? "";
+            DescripcionTextBox.Text = productoSeleccionado.Descripcion ?? "";
+            ImagenTextBox.Text = productoSeleccionado.ImagenUrl ?? "";
+            CargarImagen(productoSeleccionado.ImagenUrl);
+
+            if (productoSeleccionado.Marca != null)
+                MarcaComboBox.SelectedValue = productoSeleccionado.Marca.Id;
+            else
+                MarcaComboBox.SelectedIndex = -1;
+
+            if (productoSeleccionado.Categoria != null)
+                CategoriaComboBox.SelectedValue = productoSeleccionado.Categoria.Id;
+            else
+                CategoriaComboBox.SelectedIndex = -1;
         }
     }
 }
