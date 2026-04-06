@@ -56,13 +56,14 @@
             // VolverAMenuButton
             // 
             this.VolverAMenuButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.VolverAMenuButton.BackColor = System.Drawing.Color.Silver;
             this.VolverAMenuButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.VolverAMenuButton.Location = new System.Drawing.Point(894, 536);
             this.VolverAMenuButton.Name = "VolverAMenuButton";
             this.VolverAMenuButton.Size = new System.Drawing.Size(75, 23);
             this.VolverAMenuButton.TabIndex = 1;
             this.VolverAMenuButton.Text = "Menú";
-            this.VolverAMenuButton.UseVisualStyleBackColor = true;
+            this.VolverAMenuButton.UseVisualStyleBackColor = false;
             this.VolverAMenuButton.Click += new System.EventHandler(this.VolverAMenuButton_Click);
             // 
             // CodigoLabel
@@ -196,23 +197,25 @@
             // AgregarButton
             // 
             this.AgregarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AgregarButton.BackColor = System.Drawing.Color.Silver;
             this.AgregarButton.Location = new System.Drawing.Point(67, 491);
             this.AgregarButton.Name = "AgregarButton";
             this.AgregarButton.Size = new System.Drawing.Size(102, 37);
             this.AgregarButton.TabIndex = 17;
             this.AgregarButton.Text = "Agregar";
-            this.AgregarButton.UseVisualStyleBackColor = true;
+            this.AgregarButton.UseVisualStyleBackColor = false;
             this.AgregarButton.Click += new System.EventHandler(this.AgregarButton_Click);
             // 
             // ModificarButton
             // 
             this.ModificarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ModificarButton.BackColor = System.Drawing.Color.Silver;
             this.ModificarButton.Location = new System.Drawing.Point(191, 491);
             this.ModificarButton.Name = "ModificarButton";
             this.ModificarButton.Size = new System.Drawing.Size(104, 37);
             this.ModificarButton.TabIndex = 18;
             this.ModificarButton.Text = "Modificar";
-            this.ModificarButton.UseVisualStyleBackColor = true;
+            this.ModificarButton.UseVisualStyleBackColor = false;
             this.ModificarButton.Click += new System.EventHandler(this.ModificarButton_Click);
             // 
             // FormularioGroupBox

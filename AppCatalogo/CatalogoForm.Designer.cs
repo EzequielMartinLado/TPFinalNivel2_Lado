@@ -50,13 +50,14 @@
             // VolverAMenuButton
             // 
             this.VolverAMenuButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.VolverAMenuButton.BackColor = System.Drawing.Color.Silver;
             this.VolverAMenuButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.VolverAMenuButton.Location = new System.Drawing.Point(997, 618);
             this.VolverAMenuButton.Name = "VolverAMenuButton";
             this.VolverAMenuButton.Size = new System.Drawing.Size(75, 23);
             this.VolverAMenuButton.TabIndex = 0;
             this.VolverAMenuButton.Text = "Menú";
-            this.VolverAMenuButton.UseVisualStyleBackColor = true;
+            this.VolverAMenuButton.UseVisualStyleBackColor = false;
             this.VolverAMenuButton.Click += new System.EventHandler(this.VolverAMenuButton_Click);
             // 
             // CatalogoDataGridView
@@ -71,12 +72,13 @@
             // 
             // FiltrarButton
             // 
+            this.FiltrarButton.BackColor = System.Drawing.Color.Silver;
             this.FiltrarButton.Location = new System.Drawing.Point(386, 104);
             this.FiltrarButton.Name = "FiltrarButton";
             this.FiltrarButton.Size = new System.Drawing.Size(75, 23);
             this.FiltrarButton.TabIndex = 3;
             this.FiltrarButton.Text = "Filtrar";
-            this.FiltrarButton.UseVisualStyleBackColor = true;
+            this.FiltrarButton.UseVisualStyleBackColor = false;
             this.FiltrarButton.Click += new System.EventHandler(this.FiltrarButton_Click);
             // 
             // CategoriaFiltroComboBox
@@ -165,22 +167,24 @@
             // 
             // LimpiarButton
             // 
+            this.LimpiarButton.BackColor = System.Drawing.Color.Silver;
             this.LimpiarButton.Location = new System.Drawing.Point(386, 132);
             this.LimpiarButton.Name = "LimpiarButton";
             this.LimpiarButton.Size = new System.Drawing.Size(75, 23);
             this.LimpiarButton.TabIndex = 4;
             this.LimpiarButton.Text = "Limpiar";
-            this.LimpiarButton.UseVisualStyleBackColor = true;
+            this.LimpiarButton.UseVisualStyleBackColor = false;
             this.LimpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click);
             // 
             // EliminarButton
             // 
+            this.EliminarButton.BackColor = System.Drawing.Color.Silver;
             this.EliminarButton.Location = new System.Drawing.Point(47, 488);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(75, 23);
             this.EliminarButton.TabIndex = 12;
             this.EliminarButton.Text = "Eliminar";
-            this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.UseVisualStyleBackColor = false;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // CatalogoForm
