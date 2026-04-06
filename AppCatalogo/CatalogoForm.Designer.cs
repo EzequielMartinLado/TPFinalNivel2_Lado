@@ -187,6 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.CancelButton = this.VolverAMenuButton;
             this.ClientSize = new System.Drawing.Size(1084, 653);
             this.Controls.Add(this.EliminarButton);
@@ -203,11 +204,13 @@
             this.Controls.Add(this.FiltrarButton);
             this.Controls.Add(this.CatalogoDataGridView);
             this.Controls.Add(this.VolverAMenuButton);
+            this.ForeColor = System.Drawing.SystemColors.WindowText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CatalogoForm";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Catálogo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
